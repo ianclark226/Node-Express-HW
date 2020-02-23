@@ -1,5 +1,33 @@
 <div class = "container">
     <div class = "img-container">
         <img src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4114.png" alt="burger_image">
+
+    </div>
+    <h1> Eat-Da-Burger</h1>
+    <div class = "lists-container">
+        <!--Not devoured -->
+        <h3>Not Devoured</h3>
+        <ul>
+            {{#each burgers}}
+            {{#with dataValues}}
+            {{#unless dataValues.isDevoured}}
+            <li>
+                Name: {{ dataValues.name}} <button class="devour" data-id = "{{dataValues.id}}"></button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+<!-- devoured -->
+<h3>Devoured</h3>
+        <ul>
+            {{#each burgers}}
+            {{#if dataValues.isDevoured}}
+            
+            <li>
+                Name: {{ dataValues.name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
     </div>
 </div>
