@@ -11,7 +11,7 @@
         <ul>
             {{#each burgers}}
             {{#with dataValues}}
-            {{#unless dataValues.isDevoured}}
+            {{#unless isDevoured}}
             <li>
                 Name: {{ dataValues.name}} <button class="devour" data-id = "{{id}}">Devour it</button>
             </li>
