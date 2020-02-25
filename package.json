@@ -4,6 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "watch": "nodemon main.js",
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +20,16 @@
   "homepage": "https://github.com/ianclark226/Node-Express-HW#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "config": "^3.2.6",
+    "db": "^2.0.0",
+    "env": "0.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "nodemon": "^2.0.2",
     "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
   }
 }

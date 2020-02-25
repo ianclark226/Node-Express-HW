@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
 const apiRouter = require('./routes/apiRoutes');
-const db = require('./models');
+ const db = require('./models');
 
 const app = express();
 const port = process.env.PORT || 3000;
