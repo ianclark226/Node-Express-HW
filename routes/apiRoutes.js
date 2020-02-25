@@ -1,5 +1,5 @@
 const express = require('express');
-
+const db = require('../models');
 const router = express.Router();
 
 router.get('/burgers', async (_, res) => {
@@ -8,12 +8,12 @@ const data = await db.Burger.findAll();
 res.json(data);
 });
 
-router.post('/burger/new', async (_, res) => {
-    const {name} = req.body;
+router.post('/burger/new', async (req, res) => {
+    const { name }  = req.body;
 
-    await db.Burger.creat({
-
-        isDevoured: true
+    await db.Burger.create({
+            name,
+        isDevoured: false
     });
 
     res.status(200).end();
@@ -28,7 +28,9 @@ router.put('/burger/:id/devour', async (req, res) => {
         where: {
             id
         }
-    })
+    });
+
+    res.status(200).end();
 });
 
 module.exports = router;
