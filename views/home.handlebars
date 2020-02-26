@@ -1,5 +1,35 @@
 
 <link rel="stylesheet" href="/public/css/styles.css">
+<style>
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .lists-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 100px 0;
+    }
+
+    .inputContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    input {
+        width: 400px;
+        height: 30px;
+        border-radius: 6px;
+        outline: none;
+    }
+
+</style>
 <div class = "container">
     <div class = "img-container">
         <img src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4114.png" alt="burger_image">
@@ -11,28 +41,31 @@
         <h3>Not Devoured</h3>
         <div>
             {{#each burgers}}
-            {{#with dataValues}}
+            
             {{#unless isDevoured}}
             <div>
-                {{ dataValues.name}} <button class="devour" data-id = "{{id}}">Devour it</button>
+                {{ name }} <button class="devour" data-id = "{{id}}">Devour it</button>
             </div>
             {{/unless}}
+            
             {{/each}}
         </div>
 <!-- devoured -->
 <h3>Devoured</h3>
         <div>
             {{#each burgers}}
-            {{#if dataValues.isDevoured}}
+            {{#if isDevoured}}
             
             <div>
-            {{ dataValues.name}}
+            {{ name }}
             </div>
             {{/if}}
             {{/each}}
         </div>
     </div>
-    <input type="text" id="newBurger">
+    <div class = "inputcontainer">
+    <input type="text" id="newBurger"/>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

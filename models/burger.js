@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataType) => {
-    const Burger = sequelize.define('Burger', {
-        name: DataType.STRING,
+    const Burger = sequelize.define('burger', {
+        burger_name: DataType.STRING,
         isDevoured: DataType.BOOLEAN
     }, {});
 
