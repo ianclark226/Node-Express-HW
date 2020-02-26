@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({
 
 const hbs = exphbs.create();
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
 app.use('/api', apiRouter);
 app.get('/', async(req, res) => {

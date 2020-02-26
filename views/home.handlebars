@@ -1,73 +1,36 @@
+<link rel="stylesheet" href="/css/styles.css">
 
-<link rel="stylesheet" href="/public/css/styles.css">
-<style>
-
-    .img-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .title {
-        text-align: center;
-    }
-
-    .lists-container {
-        display: flex;
-        justify-content: space-around;
-        margin: 100px 0;
-    }
-
-    .inputContainer {
-        display: flex;
-        justify-content: center;
-    }
-
-    input {
-        width: 400px;
-        height: 30px;
-        border-radius: 6px;
-        outline: none;
-    }
-
-</style>
-<div class = "container">
-    <div class = "img-container">
-        <img src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4114.png" alt="burger_image">
-
-    </div>
-    <h1> Eat-Da-Burger</h1>
-    <div class = "lists-container">
-        <!--Not devoured -->
-        <h3>Not Devoured</h3>
-        <div>
-            {{#each burgers}}
-            
-            {{#unless isDevoured}}
-            <div>
-                {{ name }} <button class="devour" data-id = "{{id}}">Devour it</button>
-            </div>
-            {{/unless}}
-            
-            {{/each}}
-        </div>
-<!-- devoured -->
-<h3>Devoured</h3>
-        <div>
-            {{#each burgers}}
-            {{#if isDevoured}}
-            
-            <div>
-            {{ name }}
-            </div>
-            {{/if}}
-            {{/each}}
-        </div>
-    </div>
-    <div class = "inputcontainer">
-    <input type="text" id="newBurger"/>
-</div>
+<div class="container">
+	<div class="img-container">
+		<img src="https://mcdonalds.com.au/sites/mcdonalds.com.au/files/Product_thumb_BigMac-201904.png" alt="Burger images">
+	</div>
+	<h1 class="title">Eat-Da-Burger</h1>
+	<div class="lists-container">
+		{{!-- This is not devoured --}}
+		<div>
+			{{#each burgers}}
+				{{#unless isDevoured }}
+					<div>
+						{{ name }} <button class="devour" data-id="{{ id }}">Devour it</button>
+					</div>
+				{{/unless}}
+			{{/each}}
+		</div>
+		{{!-- This is devoured --}}
+		<div>
+			{{#each burgers}}
+				{{#if isDevoured }}
+					<div>
+						{{ name }}
+					</div>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+	<div class="inputContainer">
+		<input type="text" id="newBurger"/>
+	</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<script src="/public/js/script.js"></script>
+<script src="/js/scripts.js"></script>

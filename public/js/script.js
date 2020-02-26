@@ -14,8 +14,8 @@ $("#newBurger").keydown(async (e) => {
 
         location.reload();
     }
-})
-$(".devour").click((e) => {
+});
+$(".devour").click( async (e) => {
     const $currentTarget = $(e.currentTarget);
 
     const id = $currentTarget.data('id');

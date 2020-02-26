@@ -1,8 +1,8 @@
 'use strict';
-module.exports = (sequelize, DataType) => {
+module.exports = (sequelize, DataTypes) => {
     const Burger = sequelize.define('burger', {
-        burger_name: DataType.STRING,
-        isDevoured: DataType.BOOLEAN
+        burger_name: DataTypes.STRING,
+        isDevoured: DataTypes.BOOLEAN
     }, {});
 
     Burger.associate = function(models) {
