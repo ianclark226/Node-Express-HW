@@ -9,9 +9,9 @@
 		{{!-- This is not devoured --}}
 		<div>
 			{{#each burgers}}
-				{{#unless isDevoured }}
+				{{#unless this.isDevoured }}
 					<div>
-						{{ name }} <button class="devour" data-id="{{ id }}">Devour it</button>
+						{{ this.burger_name }} <button class="devour" data-id="{{ this.id }}">Devour it</button>
 					</div>
 				{{/unless}}
 			{{/each}}
@@ -19,9 +19,9 @@
 		{{!-- This is devoured --}}
 		<div>
 			{{#each burgers}}
-				{{#if isDevoured }}
+				{{#if this.isDevoured }}
 					<div>
-						{{ name }}
+						{{ this.burger_name }}
 					</div>
 				{{/if}}
 			{{/each}}
@@ -33,4 +33,4 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="/js/scripts.js"></script>
+<script src="../js/script.js"></script>

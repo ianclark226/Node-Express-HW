@@ -1,12 +1,9 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-    const Burger = sequelize.define('burger', {
-        burger_name: DataTypes.STRING,
-        isDevoured: DataTypes.BOOLEAN
-    }, {});
+const Sequelize = require("sequelize");
+const sequelize = require("../config/connection.js")
 
-    Burger.associate = function(models) {
-        
-    }
-    return Burger;
-};
+const Burger = sequelize.define('Burger', {
+    burger_name: Sequelize.STRING,
+    isDevoured: Sequelize.BOOLEAN
+});
+Burger.sync();
+module.exports = Burger;

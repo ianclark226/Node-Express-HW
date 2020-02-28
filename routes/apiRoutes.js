@@ -1,11 +1,11 @@
 const express = require('express');
 
-const db = require('../models');
+const Burger = require('../models/burger');
 
 const router = express.Router();
 
 router.get('/burgers', async (_, res) => {
-	const data = await db.Burger.findAll();
+	const data = await Burger.findAll();
 
 	res.json(data);
 });
@@ -13,8 +13,8 @@ router.get('/burgers', async (_, res) => {
 router.post('/burger/new', async (req, res) => {
 	const { name } = req.body;
 
-	await db.Burger.create({
-		name,
+	await Burger.create({
+		burger_name: name,
 		isDevoured: false
 	});
 
@@ -24,7 +24,7 @@ router.post('/burger/new', async (req, res) => {
 router.put('/burger/:id/devour', async (req, res) => {
 	const { id } = req.params;
 
-	await db.Burger.update({
+	await Burger.update({
 		isDevoured: true
 	}, {
 		where: {
