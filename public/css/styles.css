@@ -25,3 +25,7 @@ input {
 	border-radius: 6px;
 	outline: none;
 }
+
+.container {
+	background-color: orange;
+}
