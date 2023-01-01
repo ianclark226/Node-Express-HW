@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ianclark226/Node-Express-HW#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "config": "^3.2.6",
+    "config": "^3.3.8",
     "db": "^2.0.0",
     "env": "0.0.2",
     "express": "^4.17.1",
